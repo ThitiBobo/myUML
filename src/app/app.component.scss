@@ -1,0 +1,13 @@
+.all-container{
+  width: 100vw;
+  min-height: 100vh;
+  display:flex;
+}
+
+.content-container{
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column;
+}
+

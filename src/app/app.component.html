@@ -1,9 +1,11 @@
-<div>
+<div class="all-container">
   <app-sidebar></app-sidebar>
-  <div>
+  <div class="content-container">
     <app-toolbar></app-toolbar>
-    <app-editor></app-editor>
-    <app-diagram-display></app-diagram-display>
+    <as-split direction="horizontal">
+      <as-split-area><app-editor></app-editor></as-split-area>
+      <as-split-area><app-diagram-display></app-diagram-display></as-split-area>
+    </as-split>
   </div>
   <!-- <router-outlet></router-outlet> -->
 </div>
