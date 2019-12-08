@@ -50,3 +50,5 @@ interface <nom de la classe> : <interface mère>
 
 
 
+## Angular - structure du projet
+
