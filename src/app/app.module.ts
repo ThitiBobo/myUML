@@ -9,6 +9,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { EditorComponent } from './editor/editor.component';
 import { DiagramDisplayComponent } from './diagram-display/diagram-display.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import {ClassComponentComponent} from './class-diagram-components/class-component/class-component.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     SidebarComponent,
     EditorComponent,
     DiagramDisplayComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ClassComponentComponent
   ],
   imports: [
     BrowserModule,
