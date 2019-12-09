@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DiagramDisplayComponent } from './diagram-display.component';
+import { EditorCodeAreaComponent } from './editor-code-area.component';
 
-describe('DiagramDisplayComponent', () => {
-  let component: DiagramDisplayComponent;
-  let fixture: ComponentFixture<DiagramDisplayComponent>;
+describe('EditorCodeAreaComponent', () => {
+  let component: EditorCodeAreaComponent;
+  let fixture: ComponentFixture<EditorCodeAreaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DiagramDisplayComponent ]
+      declarations: [ EditorCodeAreaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DiagramDisplayComponent);
+    fixture = TestBed.createComponent(EditorCodeAreaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
