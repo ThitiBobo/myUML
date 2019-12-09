@@ -9,6 +9,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { EditorComponent } from './editor/editor.component';
 import { DiagramDisplayComponent } from './diagram-display/diagram-display.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { AceEditorModule } from 'ng2-ace-editor';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularSplitModule.forRoot()
+    AngularSplitModule.forRoot(),
+    AceEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

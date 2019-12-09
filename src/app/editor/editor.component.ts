@@ -1,10 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import * as ace from 'ace-builds'; // ace module ..
-import 'ace-builds/src-noconflict/mode-javascript'; // language package, choose your own
-import 'ace-builds/src-noconflict/theme-github'; // ui-theme package
-
-const THEME = 'ace/theme/github';
-const LANG = 'ace/mode/javascript';
+import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-editor',
@@ -13,23 +7,22 @@ const LANG = 'ace/mode/javascript';
 })
 export class EditorComponent implements OnInit {
 
-  @ViewChild('codeEditor', {static: true}) codeEditorElmRef: ElementRef;
-  private codeEditor: ace.Ace.Editor;
+  @ViewChild('editor', {static: true}) editor; // check le param static
+  @Output() content = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
-    const element = this.codeEditorElmRef.nativeElement;
-    const editorOptions: Partial<ace.Ace.EditorOptions> = {
-      highlightActiveLine: true,
-      minLines: 10,
-      maxLines: Infinity,
-    };
+    this.editor.getEditor().setOptions({
+      autoScrollEditorIntoView: true,
+      copyWithEmptySelection: true,
+    });
 
-    this.codeEditor = ace.edit(element, editorOptions);
-    this.codeEditor.setTheme(THEME);
-    this.codeEditor.getSession().setMode(LANG);
-    this.codeEditor.setShowFoldWidgets(true); // for the scope fold feature
+    // this.editor.getEditor().setTheme('monokai');
+    this.editor.getEditor().on('change', (delta) => {
+      console.log('tt:', this.editor.getEditor().getValue());
+      this.content.emit(this.editor.getEditor().getValue());
+    });
+
   }
-
 }
